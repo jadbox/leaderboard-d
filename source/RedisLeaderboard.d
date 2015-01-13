@@ -26,7 +26,7 @@ class RedisLeaderboard
 		redis.transaction([
 				"HSET " ~ PLAYERS ~ id ~ " name " ~ form["name"], 
 				"ZADD " ~ TSCORES ~ " 0 " ~ id
-			]);
+		]);
 
 		auto res = Json.emptyObject;
 		res.status = "Success: registered player";
@@ -118,9 +118,10 @@ class RedisLeaderboard
 
 		auto id = form["playerID"].to!string;
 		// The transaction to remove the player from the scoreboard list and the player object
-		redis.transaction( 	["ZREM " ~ TSCORES ~ S ~ id, 
-							"DEL " ~ PLAYERS ~ id]
-			);
+		redis.transaction([
+				"ZREM " ~ TSCORES ~ S ~ id, 
+				"DEL " ~ PLAYERS ~ id
+		]);
 
 		auto res = Json.emptyObject;
 		res.playerID = id;

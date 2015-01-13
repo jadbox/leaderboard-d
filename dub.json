@@ -1,0 +1,11 @@
+{
+	"name": "leaderboard",
+	"description": "A simple vibe.d server application.",
+	"copyright": "Copyright © 2015, jdunlap",
+	"authors": ["jdunlap"],
+	"dependencies": {
+		"vibe-d": "~>0.7.19",
+		"tinyredis": ">=2.0.2"
+	},
+	"versions": ["VibeDefaultMain"]
+}

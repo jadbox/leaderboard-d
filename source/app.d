@@ -1,12 +1,17 @@
 import vibe.d;
 import RedisLeaderboard;
-
+import vibe.core.args;
 static RedisLeaderboard leaderboard;
 
 shared static this()
 {
 	auto settings = new HTTPServerSettings;
-	settings.port = 3000;
+
+	// Resolve port
+	ushort port = 3000;
+	readOption("port", &port, "Port for server, default 3000");
+	settings.port = port;
+
 	settings.bindAddresses = ["::1", "127.0.0.1"];
 	leaderboard = new RedisLeaderboard();
 	listenHTTP(settings, &router);

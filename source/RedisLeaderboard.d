@@ -44,6 +44,7 @@ class RedisLeaderboard
 		auto id = form["playerID"].to!string;
 		auto res = Json.emptyObject;
 
+		// TODO: Check for registered playerID. Hit a minor bug with Tiny-Redis for booleon check
 		/*if(redis.send("EXISTS", PLAYERS ~ id)==false) {
 			res.playerID = id;
 			res.status = "Player id does not exist";

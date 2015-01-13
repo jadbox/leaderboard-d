@@ -22,6 +22,7 @@ class RedisLeaderboard
 		enforceHTTP("name" in form, HTTPStatus.badRequest, "Missing name field.");
 	
 		auto id = redis.send!(string)("INCR", "uniqueID");
+		// Create the transaction to register the player into the scoreboard list and create player object
 		redis.transaction([
 				"HSET " ~ PLAYERS ~ id ~ " name " ~ form["name"], 
 				"ZADD " ~ TSCORES ~ " 0 " ~ id
@@ -71,12 +72,14 @@ class RedisLeaderboard
 					HTTPStatus.badRequest, "Missing range field.");
 		string[2] scores;
 		int i = 0;
+		// Json arrays become dictionary objects and need to be iterated over into a proper array.
+		// TODO: turn this into a utility
 		foreach(k,v; form) {
 			if("range"!=k) continue;
 			scores[i] = v.to!string;
-			logInfo(k ~ ": " ~ v);
 			i++;
 		}
+		// Grab the range values from the parsed array
 		auto start = scores[0].to!string;
 		auto end = scores[1].to!string;
 
@@ -87,6 +90,7 @@ class RedisLeaderboard
 
 		auto tog = false;
 		string key;
+		// Create the score response
 		foreach(k, f; ret) {
 			if(!tog) key = f.to!string;
 			else res[key] = f.to!string;
@@ -113,6 +117,7 @@ class RedisLeaderboard
 			HTTPStatus.badRequest, "Missing playerID field.");
 
 		auto id = form["playerID"].to!string;
+		// The transaction to remove the player from the scoreboard list and the player object
 		redis.transaction( 	["ZREM " ~ TSCORES ~ S ~ id, 
 							"DEL " ~ PLAYERS ~ id]
 			);

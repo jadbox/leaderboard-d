@@ -28,7 +28,7 @@ class RedisLeaderboard
 			]);
 
 		auto res = Json.emptyObject;
-		res.status = "Successfully registered player";
+		res.status = "Success: registered player";
 		res.playerID = id;
 		res.name = form["name"];
 
@@ -61,7 +61,7 @@ class RedisLeaderboard
 
 		res.playerID = id;
 		res.score = score;
-		res.status = "Saved player score";
+		res.status = "Success: Saved player score";
 		return res;
 	}
 
@@ -118,7 +118,7 @@ class RedisLeaderboard
 
 		auto res = Json.emptyObject;
 		res.playerID = id;
-		res.status = "Player deleted";
+		res.status = "Success: Player deleted";
 		return res;
 	}
 

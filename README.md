@@ -1,5 +1,6 @@
 **Features**  
-Uses vibe.d pipes for pooled multithreaded handling of concurrent client connections.  
+* Uses vibe.d pipes for pooled multithreaded handling of concurrent client connections
+* Event routing is done using array index lookup (bounded)
   
 **Requirements**  
 Redis local running server  

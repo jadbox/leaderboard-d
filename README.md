@@ -1,12 +1,12 @@
-**Features**  
-* Uses vibe.d pipes for pooled multithreaded handling of concurrent client connections  
-* Event routing is done using array index lookup (bounded)  
+**Features**
+* Uses vibe.d pipes for pooled multithreaded handling of concurrent client connections
+* Event routing is done using array index lookup (bounded)
 * Should work on any platform that DMD supports (Linux/Win/OSX)  
   
-**Requirements**  
-Redis local running server  
-[DMD](http://dlang.org/download.html) compiler for D  
-[DUB](http://code.dlang.org/download) package manager for D  
+**Requirements**
+* Redis local running server
+* [DMD](http://dlang.org/download.html) compiler for D
+* [DUB](http://code.dlang.org/download) package manager for D  
 Note: DMD may already include DUB depending on the D install method.  
   
 **Clone, get dependencies and run:**  

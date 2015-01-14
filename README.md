@@ -1,4 +1,5 @@
 **Requirements**  
+Redis local running server  
 [DMD](http://dlang.org/download.html) compiler for D  
 [DUB](http://code.dlang.org/download) package manager for D  
 Note: DMD may already include DUB depending on the D install method.  

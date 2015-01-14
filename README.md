@@ -1,6 +1,7 @@
 **Features**  
-* Uses vibe.d pipes for pooled multithreaded handling of concurrent client connections
-* Event routing is done using array index lookup (bounded)
+* Uses vibe.d pipes for pooled multithreaded handling of concurrent client connections  
+* Event routing is done using array index lookup (bounded)  
+* Should work on any platform that DMD supports (Linux/Win/OSX)  
   
 **Requirements**  
 Redis local running server  

@@ -1,5 +1,5 @@
 **Features**  
-Uses vibe.d pipes for pooled multithreaded handling of client connections.  
+Uses vibe.d pipes for pooled multi-threaded handling of client connections.  
   
 **Requirements**  
 Redis local running server  

@@ -22,7 +22,7 @@ With [HTTPie](https://github.com/jakubroztocil/httpie), run the client test scri
     "status": "Success: registered player"
     }```
 * Deleting users, requires event id 5:
-  * Example: ```http DELETE localhost:3000 playerID="1" event = 5``` 
+  * Example: ```http POST localhost:3000 playerID="1" event = 5``` 
   * Reponse: ```{
     "playerID": 1, 
     "status": "Success: deleted player"

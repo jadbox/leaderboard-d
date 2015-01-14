@@ -1,3 +1,6 @@
+**Features**  
+Uses vibe.d pipes for pooled multithreaded handling of client connections.  
+  
 **Requirements**  
 Redis local running server  
 [DMD](http://dlang.org/download.html) compiler for D  

@@ -1,3 +1,8 @@
+**Requirements**  
+[DMD](http://dlang.org/download.html) compiler for D  
+[DUB](http://code.dlang.org/download) package manager for D  
+Note: DMD may already include DUB depending on the D install method.  
+  
 **Clone, get dependencies and run:**  
 ```
 git clone git@github.com:jadbox/leaderboard-d.git 

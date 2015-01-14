@@ -30,5 +30,7 @@ With [HTTPie](https://github.com/jakubroztocil/httpie), run the client test scri
 * All event actions use the (form) POST HTTP method
 * New event ID route handlers can be added in the app.d file
 * Server port is 3000 by default
+* Server port is 3000 by default (test.sh uses this) but can be speficied using the parameter "port"
+  * Example: ```dub -- --port 3000```
   
 _See project files for documentation._
